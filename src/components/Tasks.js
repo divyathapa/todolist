@@ -1,14 +1,17 @@
 import React from "react";
 import Task from "./Task";
-import Add from "./Add";
 
-const Tasks = ({ tasks, onDelete }) => {
+const Tasks = ({ tasks, onDelete, onChange }) => {
   return (
-    <div className="tasks">
+    <div>
       {tasks.map((task) => (
-        <Task task={task} key={task.id} onDelete={onDelete} />
+        <Task
+          task={task}
+          key={task.id}
+          onDelete={onDelete}
+          onChange={onChange}
+        />
       ))}
-      <Add tasks={tasks} />
     </div>
   );
 };
